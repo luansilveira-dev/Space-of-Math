@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/explosion_space.mp3-2b6c445ae290c2acc9f311642043e3b3.mp3str"
+
+[deps]
+
+source_file="res://musica/explosion_space.mp3"
+dest_files=[ "res://.import/explosion_space.mp3-2b6c445ae290c2acc9f311642043e3b3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

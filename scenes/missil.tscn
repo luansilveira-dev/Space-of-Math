@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprite_/missil/anima_missil1.png" type="Texture" id=1]
+[ext_resource path="res://sprite_/missil/anima_missil0.png" type="Texture" id=2]
+[ext_resource path="res://scripts/missil.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 27.5, 24.5 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "anima_missil",
+"speed": 100.0
+} ]
+
+[node name="missil" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, 0.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 6.47581e-09, -19 )
+rotation = 1.55643
+scale = Vector2( 0.336552, 0.336552 )
+frames = SubResource( 1 )
+animation = "anima_missil"
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 1.1401e-08, 9 )
+rotation = 1.55643
+scale = Vector2( 0.336552, 0.336552 )
+frames = SubResource( 1 )
+animation = "anima_missil"
+frame = 1
+playing = true

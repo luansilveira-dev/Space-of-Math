@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/2022.08.27-13.50.00-PM.mp3-3a156cf7c82939d0a4bf2293c36d18e7.mp3str"
+
+[deps]
+
+source_file="res://scenes/2022.08.27-13.50.00-PM.mp3"
+dest_files=[ "res://.import/2022.08.27-13.50.00-PM.mp3-3a156cf7c82939d0a4bf2293c36d18e7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

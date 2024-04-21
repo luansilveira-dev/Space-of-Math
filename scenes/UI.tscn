@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fontes/sigma_five/SigmaFiveBold.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://fontes/sigma_five/SigmaFiveSansItalic.otf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+outline_color = Color( 0.0627451, 0.0156863, 0.0156863, 1 )
+use_filter = true
+extra_spacing_space = -1
+font_data = ExtResource( 2 )
+
+[sub_resource type="CanvasItemMaterial" id=4]
+light_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+/styles/990 = null
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -4.0
+margin_right = 2.0
+margin_bottom = -4.0
+
+[node name="questao" type="RichTextLabel" parent="."]
+margin_left = 141.0
+margin_top = 69.0
+margin_right = 996.0
+margin_bottom = 273.0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 17.17
+custom_fonts/normal_font = SubResource( 1 )
+text = "O onibos espacial esta em orbita a 1500 metros do inimigo.... sabemos que o missil esta no ponto zero e a velocidade constante que irá alcançar 50 m/s . Quanto tempo levará para o missil atingir o inimigo?
+
+Você é nossa unica esperança!!!"
+scroll_active = false
+
+[node name="resposta" type="SpinBox" parent="."]
+modulate = Color( 0.85098, 0.85098, 0.85098, 1 )
+self_modulate = Color( 0.839216, 0.862745, 0.878431, 1 )
+show_behind_parent = true
+material = SubResource( 4 )
+margin_left = 544.0
+margin_top = 429.0
+margin_right = 738.0
+margin_bottom = 477.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 1
+size_flags_stretch_ratio = 0.0
+theme = SubResource( 3 )
+max_value = 1000.0
+step = 0.0
+exp_edit = true
+align = 1

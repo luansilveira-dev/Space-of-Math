@@ -1,0 +1,248 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://scripts/Button.gd" type="Script" id=1]
+[ext_resource path="res://fontes/sigma_five/SigmaFiveSansItalic.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://sprite_/espaco.png" type="Texture" id=3]
+[ext_resource path="res://scripts/Sair.gd" type="Script" id=4]
+[ext_resource path="res://sprite_/botao/sprite_botao0.png" type="Texture" id=5]
+[ext_resource path="res://sprite_/botao/sprite_botao1.png" type="Texture" id=6]
+[ext_resource path="res://fontes/sigma_five/SigmaFiveBoldItalic.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://scenes/nave_do_jogador.tscn" type="PackedScene" id=8]
+[ext_resource path="res://musica/battle 2.mp3" type="AudioStream" id=9]
+[ext_resource path="res://scripts/fundo.gd" type="Script" id=10]
+[ext_resource path="res://click.wav" type="AudioStream" id=11]
+[ext_resource path="res://click_(2).wav" type="AudioStream" id=12]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Espaco:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 625.5, 301 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Espaco2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1884, 301 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "move_space"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Espaco:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 625.5, 301 ), Vector2( -629, 301 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Espaco2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1884, 301 ), Vector2( 633, 301 ) ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "button_sair",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=6]
+size = 33
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("nave_do_jogador:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 673, 285 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "nave_menu"
+tracks/0/type = "value"
+tracks/0/path = NodePath("nave_do_jogador:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 673, 300.5 ), Vector2( 752, 306 ), Vector2( 854, 308 ), Vector2( 988, 312 ), Vector2( 1313, 299 ), Vector2( 1372, 297 ), Vector2( 1415, 297 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "botton",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 60
+font_data = ExtResource( 7 )
+
+[node name="Menu_inicial" type="Node2D"]
+
+[node name="Espaco2" type="Sprite" parent="."]
+position = Vector2( 1884, 301 )
+scale = Vector2( 2.586, 2.408 )
+texture = ExtResource( 3 )
+
+[node name="Espaco" type="Sprite" parent="."]
+position = Vector2( 625.5, 301 )
+scale = Vector2( 2.508, 2.408 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "move_space"
+playback_speed = 0.5
+anims/RESET = SubResource( 2 )
+anims/move_space = SubResource( 3 )
+
+[node name="Sair" type="Button" parent="."]
+margin_left = 146.0
+margin_top = 340.0
+margin_right = 372.0
+margin_bottom = 401.0
+custom_fonts/font = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="sair" type="AnimatedSprite" parent="Sair"]
+position = Vector2( 128, -70 )
+scale = Vector2( 0.98825, 1.18 )
+frames = SubResource( 5 )
+animation = "button_sair"
+frame = 1
+playing = true
+
+[node name="Label" type="Label" parent="Sair/sair"]
+margin_left = -52.2876
+margin_top = 61.4379
+margin_right = 101.712
+margin_bottom = 115.438
+custom_fonts/font = SubResource( 6 )
+text = "Sair"
+
+[node name="click2" type="AudioStreamPlayer" parent="Sair"]
+stream = ExtResource( 11 )
+
+[node name="click" type="AudioStreamPlayer2D" parent="Sair"]
+stream = ExtResource( 12 )
+volume_db = 24.0
+
+[node name="Start" type="Button" parent="."]
+margin_left = 146.0
+margin_top = 230.0
+margin_right = 375.0
+margin_bottom = 293.0
+custom_fonts/font = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="click" type="AudioStreamPlayer2D" parent="Start"]
+stream = ExtResource( 12 )
+volume_db = 24.0
+
+[node name="click2" type="AudioStreamPlayer" parent="Start"]
+stream = ExtResource( 11 )
+
+[node name="anima" type="AnimationPlayer" parent="Start"]
+root_node = NodePath("../..")
+playback_speed = 2.0
+anims/RESET = SubResource( 11 )
+anims/nave_menu = SubResource( 10 )
+
+[node name="comeca" type="AnimatedSprite" parent="Start"]
+position = Vector2( 130, -61 )
+scale = Vector2( 1.01744, 1.10781 )
+frames = SubResource( 4 )
+animation = "botton"
+playing = true
+
+[node name="Label" type="Label" parent="Start/comeca"]
+margin_left = -79.0997
+margin_top = 63.8522
+margin_right = 57.9003
+margin_bottom = 110.852
+custom_fonts/font = SubResource( 7 )
+text = "Começa"
+
+[node name="nome_game" type="Label" parent="."]
+margin_left = 408.0
+margin_top = 60.0
+margin_right = 886.0
+margin_bottom = 170.0
+custom_fonts/font = SubResource( 9 )
+text = "Space of Math"
+
+[node name="nave_do_jogador" parent="." instance=ExtResource( 8 )]
+position = Vector2( 673, 285 )
+
+[node name="fundo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+script = ExtResource( 10 )
+
+[connection signal="mouse_entered" from="Sair" to="Sair" method="_on_Start_mouse_entered"]
+[connection signal="mouse_entered" from="Sair" to="Sair" method="_on_Sair_mouse_entered"]
+[connection signal="mouse_exited" from="Sair" to="Sair" method="_on_Start_mouse_exited"]
+[connection signal="mouse_exited" from="Sair" to="Sair" method="_on_Sair_mouse_exited"]
+[connection signal="pressed" from="Sair" to="Sair" method="_on_Start_pressed"]
+[connection signal="mouse_entered" from="Start" to="Start" method="_on_Start_mouse_entered"]
+[connection signal="mouse_entered" from="Start" to="nave_do_jogador" method="_on_Start_mouse_entered"]
+[connection signal="mouse_exited" from="Start" to="Start" method="_on_Start_mouse_exited"]
+[connection signal="mouse_exited" from="Start" to="nave_do_jogador" method="_on_Start_mouse_exited"]
+[connection signal="pressed" from="Start" to="Start" method="_on_Start_pressed"]
+[connection signal="pressed" from="Start" to="nave_do_jogador" method="_on_Start_pressed"]
+[connection signal="input_event" from="nave_do_jogador" to="Start" method="_on_nave_do_jogador_input_event"]
+[connection signal="finished" from="fundo" to="fundo" method="_on_fundo_finished"]

@@ -1,0 +1,432 @@
+[gd_scene load_steps=75 format=2]
+
+[ext_resource path="res://sprite_/formula/anima_fromula0.png" type="Texture" id=1]
+[ext_resource path="res://sprite_/ampulheta/sprite_ampulheta2.png" type="Texture" id=2]
+[ext_resource path="res://sprite_/tempo/sprite_tempo11.png" type="Texture" id=3]
+[ext_resource path="res://sprite_/ampulheta/sprite_ampulheta3.png" type="Texture" id=4]
+[ext_resource path="res://sprite_/sprites/vida/anima_vida1.png" type="Texture" id=5]
+[ext_resource path="res://sprite_/formula/anima_fromula3.png" type="Texture" id=6]
+[ext_resource path="res://sprite_/ampulheta/sprite_ampulheta0.png" type="Texture" id=7]
+[ext_resource path="res://sprite_/ampulheta/sprite_ampulheta1.png" type="Texture" id=8]
+[ext_resource path="res://sprite_/tempo/sprite_tempo18.png" type="Texture" id=9]
+[ext_resource path="res://sprite_/formula/anima_fromula2.png" type="Texture" id=10]
+[ext_resource path="res://sprite_/tempo/sprite_tempo22.png" type="Texture" id=11]
+[ext_resource path="res://sprite_/tempo/sprite_tempo13.png" type="Texture" id=12]
+[ext_resource path="res://sprite_/formula/anima_fromula1.png" type="Texture" id=13]
+[ext_resource path="res://sprite_/tempo/sprite_tempo16.png" type="Texture" id=14]
+[ext_resource path="res://sprite_/tempo/sprite_tempo21.png" type="Texture" id=15]
+[ext_resource path="res://sprite_/tempo/sprite_tempo15.png" type="Texture" id=16]
+[ext_resource path="res://sprite_/formula/anima_fromula4.png" type="Texture" id=17]
+[ext_resource path="res://sprite_/tempo/sprite_tempo23.png" type="Texture" id=18]
+[ext_resource path="res://sprite_/tempo/sprite_tempo14.png" type="Texture" id=19]
+[ext_resource path="res://sprite_/tempo/sprite_tempo17.png" type="Texture" id=20]
+[ext_resource path="res://scripts/space.gd" type="Script" id=21]
+[ext_resource path="res://scripts/vida_1.gd" type="Script" id=22]
+[ext_resource path="res://scripts/vida_2.gd" type="Script" id=23]
+[ext_resource path="res://scripts/vida_3.gd" type="Script" id=24]
+[ext_resource path="res://scripts/Timer2.gd" type="Script" id=25]
+[ext_resource path="res://scripts/Timer.gd" type="Script" id=26]
+[ext_resource path="res://scripts/Timer3.gd" type="Script" id=27]
+[ext_resource path="res://sprite_/espaco.png" type="Texture" id=28]
+[ext_resource path="res://scenes/alien.tscn" type="PackedScene" id=29]
+[ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=30]
+[ext_resource path="res://scenes/Nave_player.tscn" type="PackedScene" id=31]
+[ext_resource path="res://scenes/missil.tscn" type="PackedScene" id=32]
+[ext_resource path="res://sprite_/sprites/vida/anima_vida0.png" type="Texture" id=33]
+[ext_resource path="res://sprite_/tempo/sprite_tempo24.png" type="Texture" id=34]
+[ext_resource path="res://sprite_/tempo/sprite_tempo03.png" type="Texture" id=35]
+[ext_resource path="res://sprite_/tempo/sprite_tempo05.png" type="Texture" id=36]
+[ext_resource path="res://sprite_/tempo/sprite_tempo30.png" type="Texture" id=37]
+[ext_resource path="res://sprite_/tempo/sprite_tempo09.png" type="Texture" id=38]
+[ext_resource path="res://sprite_/tempo/sprite_tempo29.png" type="Texture" id=39]
+[ext_resource path="res://sprite_/tempo/sprite_tempo07.png" type="Texture" id=40]
+[ext_resource path="res://sprite_/tempo/sprite_tempo10.png" type="Texture" id=41]
+[ext_resource path="res://sprite_/tempo/sprite_tempo01.png" type="Texture" id=42]
+[ext_resource path="res://sprite_/tempo/sprite_tempo25.png" type="Texture" id=43]
+[ext_resource path="res://sprite_/tempo/sprite_tempo04.png" type="Texture" id=44]
+[ext_resource path="res://sprite_/tempo/sprite_tempo28.png" type="Texture" id=45]
+[ext_resource path="res://sprite_/tempo/sprite_tempo08.png" type="Texture" id=46]
+[ext_resource path="res://sprite_/tempo/sprite_tempo27.png" type="Texture" id=47]
+[ext_resource path="res://sprite_/tempo/sprite_tempo19.png" type="Texture" id=48]
+[ext_resource path="res://sprite_/tempo/sprite_tempo06.png" type="Texture" id=49]
+[ext_resource path="res://sprite_/tempo/sprite_tempo26.png" type="Texture" id=50]
+[ext_resource path="res://sprite_/tempo/sprite_tempo02.png" type="Texture" id=51]
+[ext_resource path="res://sprite_/tempo/sprite_tempo20.png" type="Texture" id=52]
+[ext_resource path="res://sprite_/tempo/sprite_tempo00.png" type="Texture" id=53]
+[ext_resource path="res://sprite_/tempo/sprite_tempo12.png" type="Texture" id=54]
+[ext_resource path="res://musica/2022.08.27-13.50.00-PM.mp3" type="AudioStream" id=55]
+[ext_resource path="res://musica/explosion_space.mp3" type="AudioStream" id=56]
+[ext_resource path="res://scripts/battle.gd" type="Script" id=57]
+[ext_resource path="res://sons/sons_missil.wav" type="AudioStream" id=58]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "anime_formula",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Espaco:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 625.5, 301 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Espaco2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1884, 301 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "move_space"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Espaco:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 625.5, 301 ), Vector2( -629, 301 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Espaco2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1884, 301 ), Vector2( 633, 301 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1033, 296 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "anima_alien"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.3, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1033, 310 ), Vector2( 1033, 320 ), Vector2( 1033, 330 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1007, 308 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "deviar_missil"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1033, 278 ), Vector2( 1033, 250 ), Vector2( 1033, 270 ), Vector2( 1033, 290 ), Vector2( 1033, 310 ), Vector2( 1033, 320 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 233, 304 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "anima_"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 233, 304 ), Vector2( 200, 304 ), Vector2( 146, 304 ), Vector2( 75, 304 ), Vector2( 13, 304 ), Vector2( -69, 298 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "anima_ampulheta",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 53 ), ExtResource( 42 ), ExtResource( 51 ), ExtResource( 35 ), ExtResource( 44 ), ExtResource( 36 ), ExtResource( 49 ), ExtResource( 40 ), ExtResource( 46 ), ExtResource( 38 ), ExtResource( 41 ), ExtResource( 3 ), ExtResource( 54 ), ExtResource( 12 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 20 ), ExtResource( 9 ), ExtResource( 48 ), ExtResource( 52 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 18 ), ExtResource( 34 ), ExtResource( 43 ), ExtResource( 50 ), ExtResource( 47 ), ExtResource( 45 ), ExtResource( 39 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "tempo",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 33 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "vida_1",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 33 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "viida_2",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 33 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "vida_3",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Nave_player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 233, 304 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "anima_nave"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Nave_player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 233, 304 ), Vector2( 233, 312 ), Vector2( 233, 314 ) ]
+}
+
+[node name="main_1" type="Node2D"]
+script = ExtResource( 21 )
+
+[node name="Espaco" type="Sprite" parent="."]
+position = Vector2( 625.5, 301 )
+scale = Vector2( 2.526, 2.448 )
+texture = ExtResource( 28 )
+
+[node name="Espaco2" type="Sprite" parent="."]
+position = Vector2( 1884, 301 )
+scale = Vector2( 2.526, 2.448 )
+texture = ExtResource( 28 )
+
+[node name="anima_formula" type="AnimatedSprite" parent="."]
+position = Vector2( 1140, 55 )
+scale = Vector2( 2.16667, 2 )
+frames = SubResource( 3 )
+animation = "anime_formula"
+frame = 3
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "move_space"
+playback_speed = 0.5
+anims/RESET = SubResource( 1 )
+anims/move_space = SubResource( 2 )
+
+[node name="alien" parent="." instance=ExtResource( 29 )]
+position = Vector2( 1007, 308 )
+
+[node name="anima_alien2" type="AnimationPlayer" parent="alien"]
+autoplay = "anima_alien"
+playback_speed = 0.5
+anims/RESET = SubResource( 11 )
+anims/anima_alien = SubResource( 12 )
+
+[node name="desviar" type="AnimationPlayer" parent="alien"]
+anims/RESET = SubResource( 13 )
+anims/deviar_missil = SubResource( 14 )
+
+[node name="audio_explossao" type="AudioStreamPlayer" parent="alien"]
+stream = ExtResource( 56 )
+volume_db = 24.0
+pitch_scale = 3.0
+
+[node name="missil" parent="." instance=ExtResource( 32 )]
+position = Vector2( 233, 314 )
+
+[node name="som_missil" type="AudioStreamPlayer2D" parent="missil"]
+stream = ExtResource( 58 )
+
+[node name="Nave_player" parent="." instance=ExtResource( 31 )]
+position = Vector2( 233, 304 )
+
+[node name="audio_explossao" type="AudioStreamPlayer" parent="Nave_player"]
+stream = ExtResource( 56 )
+volume_db = 24.0
+pitch_scale = 3.0
+
+[node name="anima_" type="AnimationPlayer" parent="Nave_player"]
+playback_speed = 10.0
+anims/RESET = SubResource( 15 )
+anims/anima_ = SubResource( 16 )
+
+[node name="anima_ampulheta" type="AnimatedSprite" parent="."]
+position = Vector2( 404, 500 )
+scale = Vector2( 1.4375, 1.4375 )
+frames = SubResource( 4 )
+animation = "anima_ampulheta"
+frame = 1
+playing = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+script = ExtResource( 26 )
+
+[node name="tempo" type="AnimatedSprite" parent="Timer"]
+position = Vector2( 624, 522 )
+scale = Vector2( 6.375, 6.375 )
+frames = SubResource( 5 )
+animation = "tempo"
+
+[node name="UI" parent="." instance=ExtResource( 30 )]
+margin_left = 0.0
+margin_top = -5.0
+margin_right = 0.0
+margin_bottom = -5.0
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 30.0
+script = ExtResource( 25 )
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 46.0
+script = ExtResource( 27 )
+
+[node name="vida_1" type="AnimatedSprite" parent="."]
+position = Vector2( 829, 33 )
+scale = Vector2( 0.584615, 0.584614 )
+frames = SubResource( 6 )
+animation = "vida_1"
+frame = 1
+playing = true
+script = ExtResource( 22 )
+
+[node name="vida_2" type="AnimatedSprite" parent="."]
+position = Vector2( 889, 33 )
+scale = Vector2( 0.584616, 0.584616 )
+frames = SubResource( 7 )
+animation = "viida_2"
+frame = 1
+playing = true
+script = ExtResource( 23 )
+
+[node name="vida_3" type="AnimatedSprite" parent="."]
+position = Vector2( 948, 34 )
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 8 )
+animation = "vida_3"
+playing = true
+script = ExtResource( 24 )
+
+[node name="anima_nave" type="AnimationPlayer" parent="."]
+autoplay = "anima_nave"
+anims/RESET = SubResource( 9 )
+anims/anima_nave = SubResource( 10 )
+
+[node name="battle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 55 )
+autoplay = true
+script = ExtResource( 57 )
+
+[connection signal="body_entered" from="alien" to="missil" method="_on_alien_body_entered"]
+[connection signal="ready" from="Timer" to="." method="_on_Timer_ready"]
+[connection signal="ready" from="Timer" to="alien" method="_on_Timer_ready"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="vida_1" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer2" to="vida_2" method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]
+[connection signal="timeout" from="Timer3" to="missil" method="_on_Timer3_timeout"]
+[connection signal="timeout" from="Timer3" to="Nave_player" method="_on_Timer3_timeout"]
+[connection signal="timeout" from="Timer3" to="vida_3" method="_on_Timer3_timeout"]
+[connection signal="finished" from="battle" to="battle" method="_on_battle_finished"]
